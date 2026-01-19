@@ -76,8 +76,7 @@ export const StatsCard = ({ stats }: StatsCardProps) => {
          <div>
             <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-bold">Ranking</span>
             <div className="text-sm font-medium text-zinc-300 mt-0.5">
-               {stats.ranking > 0 ? stats.ranking.toLocaleString() : 'N/A'}
-            </div>
+            {(stats.ranking ?? 0) > 0 ? (stats.ranking!).toLocaleString() : 'N/A'}            </div>
          </div>
          {/* Placeholder for future goal/streak specific to platform if available */}
       </div>
